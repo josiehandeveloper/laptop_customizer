@@ -8,8 +8,8 @@ const USCurrencyFormat = new Intl.NumberFormat('en-US', {
   
   class Total extends Component{
     render(){
-      const total = Object.keys(this.props.cartContents).reduce(
-        (acc, curr) => acc + this.props.cartContents[curr].cost,
+      const total = Object.keys(this.props.selected).reduce(
+        (acc, curr) => acc + this.props.selected[curr].cost,
         0
       );
       return(

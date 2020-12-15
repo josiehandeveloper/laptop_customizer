@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './Header'
-import Customize from './Customize';
+import FeatureList from './FeatureList'; 
 import Cart from './Cart';
-
 
 
 const USCurrencyFormat = new Intl.NumberFormat('en-US', {
@@ -50,13 +49,13 @@ class App extends Component {
       <div className="App">
         <Header />
         <main>
-          <Customize 
+          <FeatureList 
             features={this.props.features}
             selected={this.state.selected}
             updateFeature={this.updateFeature}
           />
           <Cart
-            state={this.state.selected}
+            selected={this.state.selected}
           />
         </main>
       </div>
