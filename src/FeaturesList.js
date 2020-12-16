@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Feature from './Feature'
 
 
-class FeatureList extends Component {
+class FeaturesList extends Component {
     render() {
         const {selected} = this.props;
         const features = Object.keys(this.props.features)
@@ -27,4 +27,4 @@ class FeatureList extends Component {
     }
 }
 
-export default FeatureList;
+export default FeaturesList;
