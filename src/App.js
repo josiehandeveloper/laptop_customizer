@@ -1,49 +1,50 @@
-import React, { Component } from 'react';
-import './App.css';
-import Header from './Header'
-import FeaturesList from './FeaturesList'; 
-import Cart from './Cart';
+import React, { Component } from "react";
+import "./App.css";
+import Header from "./Header";
+import FeaturesList from "./FeaturesList";
+import Cart from "./Cart";
+import features from "./Store";
 
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       selected: {
-        'Processor': {
-          name: '17th Generation Intel Core HB (7 Core with donut spare)',
-          cost: 700
+        Processor: {
+          name: "17th Generation Intel Core HB (7 Core with donut spare)",
+          cost: 700,
         },
         "Operating System": {
-          name: 'Ubuntu Linux 16.04',
-          cost: 200
+          name: "Ubuntu Linux 16.04",
+          cost: 200,
         },
-        "Video Card":{
-          name: 'Toyota Corolla 1.5v',
-          cost: 1150.98
+        "Video Card": {
+          name: "Toyota Corolla 1.5v",
+          cost: 1150.98,
         },
-        "Display": {
+        Display: {
           name: '15.6" UHD (3840 x 2160) 60Hz Bright Lights and Knobs',
-          cost: 1500
-        }
-      }
-    }
+          cost: 1500,
+        },
+      },
+    };
   }
 
-  updateFeature = (feature, newValue) => {
+  updateFeature = (features, newValue) => {
     const selected = Object.assign({}, this.state.selected);
-    selected[feature] = newValue;
+    selected[features] = newValue;
     this.setState({
-      selected
+      selected,
     });
-  }
+  };
 
   render() {
     return (
-      <div className="App">     
+      <div className="App">
         <Header />
         <main>
-          <FeaturesList 
-            features={this.props.features} 
+          <FeaturesList
+            features={features}
             selected={this.state.selected}
             onSelect={this.updateFeature}
           />
@@ -54,8 +55,4 @@ class App extends Component {
   }
 }
 
-export default App;  
-
-
-
-
+export default App;
