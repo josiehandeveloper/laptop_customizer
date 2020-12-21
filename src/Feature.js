@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import FeatureOption from "./FeatureOption";
-import features from "./Store";
+import { FEATURES } from "./Store";
 
 class Feature extends Component {
   render() {
@@ -16,13 +16,13 @@ class Feature extends Component {
           key={index}
           onSelect={this.props.onSelect}
           item={item}
-          featureName={features.name}
+          featureName={FEATURES.name}
         />
       );
     });
 
     return (
-      <div className="feature" key={features.name}>
+      <div className="feature" key={FEATURES.name}>
         <div className="feature__name">{this.props.name}</div>
         <ul className="feature__list">{options}</ul>
       </div>

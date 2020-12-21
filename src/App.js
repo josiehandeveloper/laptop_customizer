@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./Header";
 import FeaturesList from "./FeaturesList";
 import Cart from "./Cart";
-import features from "./Store";
+import { FEATURES } from "./Store";
 
 class App extends Component {
   constructor(props) {
@@ -44,7 +44,7 @@ class App extends Component {
         <Header />
         <main>
           <FeaturesList
-            features={features}
+            features={FEATURES}
             selected={this.state.selected}
             onSelect={this.updateFeature}
           />
